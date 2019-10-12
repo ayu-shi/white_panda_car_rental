@@ -1,0 +1,47 @@
+<div class="card">
+    <div class="card-body">
+      <form [formGroup]="angForm" novalidate>
+        <div class="form-group">
+          <label class="col-md-4">Vehicle Number</label>
+          <input type="text" class="form-control" formControlName="Vehicle_number" #Vehicle_number [(ngModel)] = "business.vehicle_number" />
+        </div>
+        <div *ngIf="angForm.controls['Vehicle_number'].invalid && (angForm.controls['Vehicle_number'].dirty || angForm.controls['Vehicle_number'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['Vehicle_number'].errors.required">
+            Vehicle Number is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Model Name </label>
+          <input type="text" class="form-control" formControlName="Model_name" #Model_name [(ngModel)] = "business.model_name" />
+        </div>
+        <div *ngIf="angForm.controls['Model_name'].invalid && (angForm.controls['Model_name'].dirty || angForm.controls['Model_name'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['Model_name'].errors.required">
+        Model Name is required.
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="col-md-4">Seating Capacity </label>
+          <input type="number" class="form-control" formControlName="Seating_capacity" #Seating_capacity [(ngModel)] = "business.seating_capacity" />
+        </div>
+        <div *ngIf="angForm.controls['Seating_capacity'].invalid && (angForm.controls['Seating_capacity'].dirty || angForm.controls['Seating_capacity'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['Seating_capacity'].errors.required">
+            Seating Capacity is required.
+          </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4">Rent </label>
+            <input type="number" class="form-control" formControlName="Rent" #Rent [(ngModel)] = "business.rent" />
+          </div>
+          <div *ngIf="angForm.controls['Rent'].invalid && (angForm.controls['Rent'].dirty || angForm.controls['Rent'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['Rent'].errors.required">
+              Rent is required.
+            </div>
+          </div>
+        <div class="form-group">
+          <button (click)="updatecar(Vehicle_number.value, Model_name.value, Seating_capacity.value,Rent.value)"
+          [disabled]="angForm.invalid" type="button"
+          class="btn btn-primary">Update Business</button>
+        </div>
+      </form>
+    </div>
+  </div>
