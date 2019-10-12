@@ -2,7 +2,12 @@
   1) ng serve
   2) node server.js
   3) mongod
-* There is some problem in uploading it to heroku so I am attaching the preview to show you the project
+  
+* There is some problem in uploading it to "heroku" so I am attaching the preview to show you the project.
+
+* The project is successfulliy build without error and it contains dist folder as well to show build success.
+
+* open check_screen_shots folder for screenshots
 
 
   
